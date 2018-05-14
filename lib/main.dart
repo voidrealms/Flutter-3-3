@@ -20,7 +20,7 @@ class _State extends State<MyApp> {
   void _setValue2(int value) => setState(() => _value2 = value);
 
   Widget makeRadios() {
-    List list = new List();
+    List<Widget> list = new List<Widget>();
 
     for(int i = 0; i < 3; i++){
       list.add(new Radio(value: i, groupValue: _value1, onChanged: _setValue1));
@@ -31,18 +31,18 @@ class _State extends State<MyApp> {
   }
 
   Widget makeRadioTiles() {
-    List list = new List();
+    List<Widget> list = new List<Widget>();
 
     for(int i = 0; i < 3; i++){
       list.add(new RadioListTile(
-          value: i,
-          groupValue: _value2,
-          onChanged: _setValue2,
-          activeColor: Colors.green,
-          controlAffinity: ListTileControlAffinity.trailing,
-          title: new Text('Item: ${i}'),
-          subtitle: new Text('sub title'),
-      
+        value: i,
+        groupValue: _value2,
+        onChanged: _setValue2,
+        activeColor: Colors.green,
+        controlAffinity: ListTileControlAffinity.trailing,
+        title: new Text('Item: ${i}'),
+        subtitle: new Text('sub title'),
+
       ));
     }
 
@@ -57,16 +57,16 @@ class _State extends State<MyApp> {
         title: new Text('Name here'),
       ),
       body: new Container(
-        padding: new EdgeInsets.all(32.0),
-        child: new Center(
-          child: new Column(
-            children: <Widget>[
-              makeRadios(),
-              makeRadioTiles(),
+          padding: new EdgeInsets.all(32.0),
+          child: new Center(
+            child: new Column(
+              children: <Widget>[
+                makeRadios(),
+                makeRadioTiles(),
 
-            ],
-          ),
-        )
+              ],
+            ),
+          )
       ),
     );
   }
